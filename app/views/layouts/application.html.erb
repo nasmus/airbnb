@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Airbnb" %></title>
+    <title>Airbnb | holiday rentals</title>
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -22,7 +23,17 @@
     <%= javascript_importmap_tags %>
   </head>
 
+
   <body>
-    <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= render 'layouts/header' %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
+
+
+
+
 </html>

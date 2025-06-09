@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Property.create!({
+    name: 'appartment in gulshan thana',
+    description: 'Stylish & Luxurious 2-Bedroom Apartment!
+This modern, air-conditioned apartment offers comfort for 4 guests with spacious bedrooms, attached & ',
+    headline:'Home Away From Home',
+    address_1:'uttara sector-7 road -12',
+    address_2:'uttara sector-11 road -14',
+    city:'bogura',
+    state:'bogura sodor ',
+    country:'bangladesh'
+
+})
