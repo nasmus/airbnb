@@ -8,3 +8,43 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ .swiper {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.swiper:hover {
+    .swiper-button-next {
+        display: block !important;
+    }
+
+    .swiper-button-prev {
+        display: block !important;
+    }
+}
+
+.swiper-button-next {
+    display: none !important;
+    width: 28px !important;
+    height: 28px !important;
+    background-color: white;
+    background-image: url('assets/images/next.svg');
+    border-radius: 50%;
+}
+
+.swiper-button-next::after {
+    content: '' !important;
+}
+
+.swiper-button-prev {
+    display: none !important ;
+    width: 28px !important;
+    height: 28px !important;
+    background-color: white;
+    background-image: url('assets/images/prev.svg');
+    border-radius: 50%;
+}
+.swiper-button-prev::after {
+    content: '' !important;
+}
