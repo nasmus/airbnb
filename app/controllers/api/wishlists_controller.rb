@@ -12,8 +12,8 @@ module Api
         end
 
        def destroy
-        wishlist = Wishlist.find(params[:id])
-        wishlist.destroy
+            wishlist = Wishlist.find(params[:id])
+            wishlist.destroy()
             respond_to do |format|
                 format.json do
                     render json: wishlist.to_json, status: 204

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get "home/index"
+  
   root "home#index"
+  get "home/index"
 
   namespace :api do
     resources :wishlists, only: [:create, :destroy]

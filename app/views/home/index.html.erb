@@ -23,13 +23,16 @@
                 viewBox="0 0 32 32"
                  aria-hidden="true" 
                  role="presentation" 
-                 class=" block h-6 w-6 stroke-white stroke-2 fill-none"
+                 class=" block h-6 w-6 stroke-white stroke-2 <%= properti.wishlisted_by?(current_user) ? 'fill-red-500': 'fill-none' %> "
                  focusable="false" 
                  style="overflow:visible"
                  data-controller="wishlist"
                  data-user-logged-in="<%= user_signed_in? %>"
+                 data-property-id="<%= properti.id %>"
+                 data-user-id="<%= current_user&.id %>"
+                 data-wishlist-id="<%= properti.wishlists.find_by(user: current_user)&.id %>"
                  data-action="click->wishlist#updateWishlistStatus"
-                 data-status="false"
+                 data-status="<%= properti.wishlisted_by?(current_user)%>"
                  >
                   <path 
                     d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"
@@ -47,9 +50,8 @@
                     <%= properti.headline %>
                 </a>
                 </h3>
-
-                <p class="mt-0.5 text-sm text-gray-500"><%= properti.name %></p>
-                <p class="mt-0.5 text-sm text-gray-500"><%= properti.city %>, <%= properti.country %></p>
+                
+                <p class="mt-0.5 text-sm text-gray-500"><%= properti.available_dates.first %> - <%= properti.available_dates.last %></p>
                 <p class="mt-0.5 text-sm font-light text-black"><span class="font-bold" >   <%= humanized_money_with_symbol(properti.price) %> </span>night </p>
             </div>
                 <p class="flex text-sm font-bold text-gray-900  "> 
