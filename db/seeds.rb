@@ -27,7 +27,11 @@ user = User.create!({
         price: Money.from_amount((50..100).to_a.sample,'USD'),
     })
     property.images.attach(io: File.open("db/images/property_#{i + 1}.jpeg"), filename: "property.name")
-    property.images.attach(io: File.open("db/images/property_#{i + 11}.jpeg"), filename: "property.name")
+    property.images.attach(io: File.open("db/images/property_11.jpeg"), filename: "property.name")
+    property.images.attach(io: File.open("db/images/property_15.jpeg"), filename: "property.name")
+    property.images.attach(io: File.open("db/images/property_18.jpeg"), filename: "property.name")
+    property.images.attach(io: File.open("db/images/property_19.jpeg"), filename: "property.name")
+    property.images.attach(io: File.open("db/images/property_20.jpeg"), filename: "property.name")
     ((5..10).to_a.sample).times do
         Review.create!({
             content: Faker::Lorem.paragraph(sentence_count: 10),
